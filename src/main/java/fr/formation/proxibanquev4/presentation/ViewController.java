@@ -49,10 +49,10 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 		return RedirectConstant.REDIRECT_TO_INDEX;
 	}
 	
-	public ModelAndView showAllResponsesBySurvey() {
-		ModelAndView mav = new ModelAndView();
-		List<Survey> allResponses = this.surveyService.getAll(id);
-		return mav;
-	}
+//	public ModelAndView showAllResponsesBySurvey() {
+//		ModelAndView mav = new ModelAndView();
+//		List<Survey> allResponses = this.surveyService.getAll(id);
+//		return mav;
+//	}
 }
 
