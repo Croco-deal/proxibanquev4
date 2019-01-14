@@ -4,13 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import fr.formation.proxibanquev4.metier.entity.Survey;
+import fr.formation.proxibanquev4.metier.entity.ResponseBySurvey;
 import fr.formation.proxibanquev4.persistance.SurveyDao;
 
 public class SurveyService extends RestService<Survey>{
 
 	@Autowired
 	private SurveyDao surveyDao;
-	private responseBySurvey List<ResponseBySurvey>;
+	private List<ResponseBySurvey> responseBySurvey;
 	
 	@Override
 	protected JpaRepository<Survey, Integer> getDao() {
