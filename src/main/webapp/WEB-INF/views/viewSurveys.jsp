@@ -36,10 +36,40 @@
 </head>
 
 <body id="page-top">
-<div style="text-align:center">
- <a href="newSurvey.html"> <button class="btn btn-primary">Créer un sondage</button> </a>
-  <button class="btn btn-primary">Arrêter un sondage </button>
-  <a href="vieWSurveys.html"><button class="btn btn-primary">Visualiser les sondages</button></a>
+
+<div class="admin-container">
+		<div class="chocoList">
+			<h2>Liste des types :</h2>
+			<table class="table table-stripped">
+				<thead>
+					<tr>
+						<th>N° Sondage</th>
+						<th>Date Ouverture</th>
+						<th>Oui</th>
+						<th>Non</th>
+						<th class="url">Image</th>
+						<th class="chocoActions">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="rbs" items="${rbs}">
+						<tr>
+							<td>${rbs.idSurvey}</td>
+							<td>${rbs.openDate}</td>
+							<td>${rbs.positiveResponse}</td>
+							<td>${rbs.negativeResponse}</td>
+							<td class="chocoActions">
+								<a class="btn btn-danger" href="deleteChoco.html?id=${choco.id}">Supprimer</a>
+								<a class="btn btn-primary" href="admin.html?id=${choco.id}">Modifier</a>
+							</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+			<h3>
+				<a href="index.html">Retour à l'accueil</a>
+			</h3>
+		</div>
 </div>
 
 </body>

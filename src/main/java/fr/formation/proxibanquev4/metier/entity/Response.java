@@ -31,8 +31,7 @@ public class Response {
 	@JoinColumn(name = "client_id", referencedColumnName = "id")
 	private Client client;
 
-	@OneToOne
-	@JoinColumn(name = "survey_id", referencedColumnName = "id")
+	
 	private Survey survey;
 
 	public Response() {

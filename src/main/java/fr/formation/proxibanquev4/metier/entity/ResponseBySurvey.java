@@ -8,14 +8,14 @@ public class ResponseBySurvey {
 
 	private Integer positiveResp;
 
-	private Integer negativeReso;
+	private Integer negativeResp;
 
 	private LocalDate openDate;
 
-	public ResponseBySurvey(Integer idSurvey, Integer positiveResp, Integer negativeReso, LocalDate openDate) {
+	public ResponseBySurvey(Integer idSurvey, Integer positiveResp, Integer negativeResp, LocalDate openDate) {
 		this.idSurvey = idSurvey;
 		this.positiveResp = positiveResp;
-		this.negativeReso = negativeReso;
+		this.negativeResp = negativeResp;
 		this.openDate = openDate;
 	}
 
@@ -39,12 +39,12 @@ public class ResponseBySurvey {
 		this.positiveResp = positiveResp;
 	}
 
-	public Integer getNegativeReso() {
-		return negativeReso;
+	public Integer getNegativeResp() {
+		return negativeResp;
 	}
 
-	public void setNegativeReso(Integer negativeReso) {
-		this.negativeReso = negativeReso;
+	public void setNegativeResp(Integer negativeResp) {
+		this.negativeResp = negativeResp;
 	}
 
 	public LocalDate getOpenDate() {

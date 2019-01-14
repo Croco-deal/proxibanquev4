@@ -34,7 +34,7 @@ public class Survey {
 	private LocalDate closeDate;
 
 	@OneToMany
-	@JoinColumn(name = "responses_id", referencedColumnName = "id")
+	@JoinColumn(name = "survey_id", referencedColumnName = "id")
 	private List<Response> responses;
 
 	public Integer getId() {

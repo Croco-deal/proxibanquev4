@@ -51,12 +51,13 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 		return RedirectConstant.REDIRECT_TO_INDEX;
 	}
 	
-//	public ModelAndView showAllResponsesBySurvey() {
-//		ModelAndView mav = new ModelAndView();
-//		List<Survey> allSurvey = this.surveyService.getAll();
-//		mav.addObject("allSurvey", allSurvey);
-//		mav.addObject(")
-//		return mav;
-//	}
+	@RequestMapping("viewSurveys")
+	public ModelAndView showAllResponsesBySurvey() {
+		ModelAndView mav = new ModelAndView();
+		List<Survey> allSurvey = this.surveyService.getAll();
+		List<ResponseBySurvey> rbs =  this.surveyService.ShowAllResponsesBySurvey();
+		mav.addObject("allSurvey", allSurvey);
+		mav.addObject("rbs", rbs);
+		return mav;
+	}
 }
-
