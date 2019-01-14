@@ -31,18 +31,17 @@ public class Response {
 	@JoinColumn(name = "client_id", referencedColumnName = "id")
 	private Client client;
 
-	
-	private Survey survey;
+	//@Transiant
+	//private Survey survey;
 
 	public Response() {
 	}
 
-	public Response(Integer id, Boolean isTrue, String comment, Client client, Survey survey) {
+	public Response(Integer id, Boolean isTrue, String comment, Client client) {
 		this.id = id;
 		this.isTrue = isTrue;
 		this.comment = comment;
 		this.client = client;
-		this.survey = survey;
 	}
 
 	public Integer getId() {
@@ -77,11 +76,5 @@ public class Response {
 		this.client = client;
 	}
 
-	public Survey getSurvey() {
-		return survey;
-	}
-
-	public void setSurvey(Survey survey) {
-		this.survey = survey;
-	}
+	
 }
