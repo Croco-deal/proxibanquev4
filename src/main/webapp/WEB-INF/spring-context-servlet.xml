@@ -24,7 +24,16 @@
 										  fr.formation.proxibanquev4.metier
 										  fr.formation.proxibanquev4.persistance" />
 	<!-- Configuration générale importante pour le module MVC. -->
-	<mvc:annotation-driven />
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean
+				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="objectMapper">
+					<bean class="fr.formation.proxibanquev4.JavaTimeObjectMapper" />
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
 	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -45,6 +54,8 @@
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
 	
+		
+		
 	<jpa:repositories base-package="fr.formation.proxibanquev4.persistance" />
 										  
 </beans>

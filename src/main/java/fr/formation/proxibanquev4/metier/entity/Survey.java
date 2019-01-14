@@ -36,6 +36,8 @@ public class Survey {
 	@OneToMany
 	@JoinColumn(name = "survey_id", referencedColumnName = "id")
 	private List<Response> responses;
+	
+	private LocalDate date;
 
 	public Integer getId() {
 		return id;
@@ -83,6 +85,14 @@ public class Survey {
 		this.endDate = endDate;
 		this.closeDate = closeDate;
 		this.responses = responses;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
 	}
 
 	public Survey() {

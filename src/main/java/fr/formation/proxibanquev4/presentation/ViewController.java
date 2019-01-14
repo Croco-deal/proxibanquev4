@@ -37,12 +37,11 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 	}
 	
 	@RequestMapping("newSurvey")
-	public ModelAndView showSurvey(){
-		ModelAndView mav = new ModelAndView();
-		Survey survey = new Survey();
-		mav.addObject("openDate", survey.getOpenDate());
-		mav.addObject("endDate", survey.getEndDate());
-		return mav;
+	public String showSurvey(){
+//		Survey survey = new Survey();
+//		mav.addObject("openDate", survey.getOpenDate());
+//		mav.addObject("endDate", survey.getEndDate());
+		return RedirectConstant.REDIRECT_TO_NEW_SURVEY;
 	}
 	
 	@RequestMapping(path="newSurvey", method=RequestMethod.POST)
@@ -59,5 +58,11 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 		mav.addObject("allSurvey", allSurvey);
 		mav.addObject("rbs", rbs);
 		return mav;
+	}
+	
+	@RequestMapping({"", "index"})
+	public String closeSurvey(Integer id) {
+		Survey survey = this.surveyService.closeSurvey(id);
+		return RedirectConstant.REDIRECT_TO_INDEX;
 	}
 }

@@ -25,7 +25,10 @@ public class SurveyService extends RestService<Survey> {
 	}
 
 	public Survey closeSurvey(Integer id) {
-		return null;
+		Survey survey = this.surveyDao.getOne(id);
+		survey.setEndDate(survey.getDate().now());
+		this.surveyDao.save(survey);
+		return survey;
 	}
 
 	public List<Survey> getAll() {
