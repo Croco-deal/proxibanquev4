@@ -24,7 +24,11 @@ public class SurveyService extends RestService<Survey>{
 		return null;
 	}
 	
-	public List<ResponseBySurvey> showAllResponsesBySurvey(Integer id) {
-		return null;
+	public List<Survey> getAll() {
+		return this.surveyDao.findAll();
+	}
+	
+	public List<Survey> getAll(Integer id) {
+		return this.surveyDao.findAll();
 	}
 }
