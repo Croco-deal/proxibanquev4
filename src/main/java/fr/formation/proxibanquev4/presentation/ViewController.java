@@ -3,6 +3,7 @@ package fr.formation.proxibanquev4.presentation;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +22,9 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 	public class ViewController {
 
 		private static final Logger LOGGER = Logger.getLogger(ViewController.class);
-		
+		@Autowired
 		private SurveyService surveyService;
+		@Autowired
 		private ResponseService responseService;
 	
 	@RequestMapping({ "", "index" })
@@ -43,7 +45,7 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 		return mav;
 	}
 	
-	@RequestMapping(path="admin", method=RequestMethod.POST)
+	@RequestMapping(path="newSurvey", method=RequestMethod.POST)
 	public String createSurvey(Survey survey) {
 		this.surveyService.create(survey);
 		return RedirectConstant.REDIRECT_TO_INDEX;
