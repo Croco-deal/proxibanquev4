@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
 
 import fr.formation.proxibanquev4.metier.entity.ResponseBySurvey;
 import fr.formation.proxibanquev4.metier.entity.Survey;
 import fr.formation.proxibanquev4.persistance.SurveyDao;
 
+@Service
 public class SurveyService extends RestService<Survey>{
 
 	@Autowired
@@ -28,7 +30,7 @@ public class SurveyService extends RestService<Survey>{
 		return this.surveyDao.findAll();
 	}
 	
-	public List<Survey> getAll(Integer id) {
-		return this.surveyDao.findAll();
-	}
+//	public List<ResponseBySurvey> ShowAllResponsesBySurvey() {
+//		return this.surveyDao.findAll();
+//	}
 }
