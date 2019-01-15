@@ -9,6 +9,12 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * Classe représentant toutes les informations d'un client
+ * 
+ * @author JLSS
+ *
+ */
 @Entity
 @Table(name = "client")
 @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
@@ -37,6 +43,16 @@ public class Client {
 	public Client() {
 	}
 
+	/**
+	 * Constructeur utilisant les attributs
+	 * 
+	 * @param id
+	 * @param clientNumber
+	 * @param firstname
+	 * @param lastname
+	 * @param mail
+	 * @param tel
+	 */
 	public Client(Integer id, String clientNumber, String firstname, String lastname, String mail, String tel) {
 		this.id = id;
 		ClientNumber = clientNumber;
