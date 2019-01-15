@@ -20,7 +20,7 @@ public class Client {
 	private Integer id;
 
 	@Column
-	private String ClientNumber;
+	private String clientNumber;
 
 	@Column
 	private String firstname;
@@ -39,7 +39,7 @@ public class Client {
 
 	public Client(Integer id, String clientNumber, String firstname, String lastname, String mail, String tel) {
 		this.id = id;
-		ClientNumber = clientNumber;
+		this.clientNumber = clientNumber;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.mail = mail;
@@ -55,11 +55,11 @@ public class Client {
 	}
 
 	public String getClientNumber() {
-		return ClientNumber;
+		return clientNumber;
 	}
 
 	public void setClientNumber(String clientNumber) {
-		ClientNumber = clientNumber;
+		this.clientNumber = clientNumber;
 	}
 
 	public String getFirstname() {
