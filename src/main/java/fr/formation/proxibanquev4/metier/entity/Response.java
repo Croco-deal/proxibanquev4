@@ -79,5 +79,13 @@ public class Response {
 		this.client = client;
 	}
 
+	public Survey getSurvey() {
+		return survey;
+	}
+
+	public void setSurvey(Survey survey) {
+		this.survey = survey;
+	}
+
 	
 }
