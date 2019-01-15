@@ -76,7 +76,6 @@ public class SurveyService extends RestService<Survey> {
 		for (Response response : responses) {
 			if (response.getIsTrue()) {
 				i++;
-				return i;
 			}
 		}
 		return i;

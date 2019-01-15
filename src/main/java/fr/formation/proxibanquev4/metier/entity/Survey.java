@@ -33,8 +33,7 @@ public class Survey {
 	@Column
 	private LocalDate closeDate;
 
-	@OneToMany
-	@JoinColumn(name = "survey_id", referencedColumnName = "id")
+	@OneToMany(mappedBy="survey")
 	private List<Response> responses;
 	
 	private LocalDate date;

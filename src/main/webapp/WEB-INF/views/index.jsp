@@ -37,9 +37,9 @@
 		</div>
 	</header>
 <div style="text-align:center">
- <a href="newSurvey.html"> <button class="btn btn-primary">Créer un sondage</button> </a>
-  <a href="closeSurvey.html"></a><button class="btn btn-primary">Arrêter un sondage </button></a>
-  <a href="viewSurveys.html"><button class="btn btn-primary">Visualiser les sondages</button></a>
+ <a href="newSurvey.html"> <button class="btn btn-primary" id="btnp">Créer un sondage</button> </a>
+  <a href="closeSurvey.html"></a><button class="btn btn-primary" id="btnp">Arrêter un sondage </button></a>
+  <a href="viewSurveys.html"><button class="btn btn-primary" id="btnp">Visualiser les sondages</button></a>
 </div>
 
 </body>
