@@ -61,8 +61,10 @@
 				</div>
 				<button class="btn btn-primary">Valider</button>
 				<button type="reset" class="btn btn-warning">Annuler</button>
+				
 			</form>
 </div>
+<a href="index.html"> <button class="btn btn-warning" id="redirect">Retour Accueil</button> </a>
 
 </body>
 

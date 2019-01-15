@@ -76,4 +76,15 @@ public class SurveyService extends RestService<Survey> {
 		Integer falseResponses = survey.getResponses().size() - this.getTrueResponses(id);
 		return falseResponses;
 	}
+	
+	public Survey existingSurvey() {
+		List<Survey> allSurvey = this.getAll();
+		Survey existingSurvey = null;
+		for (Survey survey : allSurvey) {
+			if (survey.getCloseDate() == null) {
+				existingSurvey = survey;
+			}
+		}
+		return existingSurvey;
+	}
 }
