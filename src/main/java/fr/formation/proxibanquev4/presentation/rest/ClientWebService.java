@@ -13,6 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 import fr.formation.proxibanquev4.metier.entity.Client;
 import fr.formation.proxibanquev4.metier.service.ClientService;
 
+/**
+ * Classe permettant de lier les clients entre Java, Angular et la base de données.
+ * 
+ * @author JLSS
+ *
+ */
 @RestController
 @RequestMapping("/client")
 @Transactional(readOnly=true)
@@ -22,6 +28,12 @@ public class ClientWebService {
 	@Autowired
 	private ClientService clientService;
 	
+	/**
+	 * Méthode permettant de retourner un 'client' si ce dernier possède bien un 'number'.
+	 * 
+	 * @param number : numéro d'identification du client (String).
+	 * @return Client.
+	 */
 	@GetMapping("/{number}")
 	public Client existingClient(@PathVariable String number) {
 		Client existingClient = null;
