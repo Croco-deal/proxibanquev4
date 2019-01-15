@@ -40,16 +40,6 @@ public class SurveyService extends RestService<Survey> {
 		return survey;
 	}
 
-	public boolean isSurvey() {
-		boolean isSurvey = false;
-		List<Survey> allSurvey = this.getAll();
-		for (Survey survey : allSurvey) {
-			if (survey.getCloseDate() == null) {
-				isSurvey = true;
-			}
-		}
-		return isSurvey;
-	}
 
 	public List<ResponseBySurvey> ShowAllResponsesBySurvey() {
 		List<ResponseBySurvey> list = new ArrayList<>();
@@ -76,7 +66,6 @@ public class SurveyService extends RestService<Survey> {
 		for (Response response : responses) {
 			if (response.getIsTrue()) {
 				i++;
-				return i;
 			}
 		}
 		return i;

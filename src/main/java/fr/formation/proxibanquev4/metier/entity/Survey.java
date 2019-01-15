@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "survey")
-@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler", "responses" })
 public class Survey {
 
 	@Id
@@ -33,8 +33,7 @@ public class Survey {
 	@Column
 	private LocalDate closeDate;
 
-	@OneToMany
-	@JoinColumn(name = "survey_id", referencedColumnName = "id")
+	@OneToMany(mappedBy="survey")
 	private List<Response> responses;
 	
 	private LocalDate date;
