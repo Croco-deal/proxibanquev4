@@ -30,10 +30,11 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 	@RequestMapping({ "", "index" })
 	public ModelAndView index() {
 		ModelAndView mav = new ModelAndView("index");
-//		if (this.surveyService.isSurvey() == true) {
-//			Survey survey = this.surveyService.getOne(id);
-//			LOGGER.info("Page Index-Sondage affichée!");
-//		}
+		Survey surveyExists = this.surveyService.existingSurvey();
+		if (surveyExists != null) {
+			mav.addObject("surveyExists",surveyExists);
+			LOGGER.info("Page Index-Sondage affichée!");
+		} 
 		return mav;
 	}
 	

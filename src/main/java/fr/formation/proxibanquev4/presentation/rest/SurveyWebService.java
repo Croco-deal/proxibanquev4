@@ -23,13 +23,6 @@ public class SurveyWebService {
 	
 	@GetMapping
 	public Survey existingSurvey() {
-		List<Survey> allSurvey = this.surveyService.getAll();
-		Survey existingSurvey = null;
-		for (Survey survey : allSurvey) {
-			if (survey.getCloseDate() == null) {
-				existingSurvey = survey;
-			}
-		}
-		return existingSurvey;
+		return this.surveyService.existingSurvey();
 	}
 }

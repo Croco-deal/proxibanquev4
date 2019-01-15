@@ -57,7 +57,7 @@
 				</tbody>
 			</table>
 		</div>
-<a href="newSurvey.html"> <button class="btn btn-primary" id="redirect">Retour Accueil</button> </a>
+<a href="index.html"> <button class="btn btn-dark" id="redirect">Retour Accueil</button> </a>
 </body>
 
 </html>
