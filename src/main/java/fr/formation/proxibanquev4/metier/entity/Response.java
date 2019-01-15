@@ -11,9 +11,14 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.ManyToAny;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * Classe permettant de représenter la classe Respense avce ses différents attributs 
+ * avec des annotations JPA permettant de persister la classe en base de données
+ * @author JLSS
+ *
+ */
 @Entity
 @Table(name = "response")
 @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })

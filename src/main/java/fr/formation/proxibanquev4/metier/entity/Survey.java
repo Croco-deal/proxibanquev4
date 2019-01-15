@@ -16,6 +16,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
+/**
+ * classe permettant de représenter la classe Surevey
+ * avec les annotions de bases de données permettant de persister la classe en base de données
+ * @author JLSS
+ *
+ */
 @Entity
 @Table(name = "survey")
 @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler", "responses" })

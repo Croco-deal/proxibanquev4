@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * Classe représentant toutes les informations d'un client
- * 
+ * Avec les annotations JPA permettant de persister la classe en base de données
  * @author JLSS
  *
  */

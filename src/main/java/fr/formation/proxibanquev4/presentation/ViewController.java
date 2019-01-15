@@ -16,6 +16,16 @@ import fr.formation.proxibanquev4.metier.entity.Survey;
 import fr.formation.proxibanquev4.metier.service.ResponseService;
 import fr.formation.proxibanquev4.metier.service.SurveyService;
 
+
+/**
+ * Controleur des vues responsable de distribuer les bons objets vues/model pour
+ * aller vers une page JSP avec les informations dans le model.
+ * 
+ * L'annotation @Controller défini la classe en tant que bean Spring singleton.
+ * L'annotation @RequestMapping défini la classe comme capable de répondre sur
+ * les requêtes HTTP commençant par "/".
+ */
+
 	@Controller
 	@RequestMapping("/")
 	@Transactional(readOnly=true) 
