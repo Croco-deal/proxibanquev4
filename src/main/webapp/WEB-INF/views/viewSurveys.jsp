@@ -22,6 +22,15 @@
 </head>
 
 <body id="page-top">
+  <header class="masthead">
+		<div class="container">
+			<div class="intro-text" style="padding-top: 150px; padding-bottom: 200px;">
+				<div class="intro-lead-in">Bienvenue sur le système
+					d'information</div>
+				<div class="intro-heading text-uppercase">PROXIBANQUE</div>
+			</div>
+		</div>
+	</header>
 
 <div class="admin-container">
 		<div class="chocoList">
@@ -49,9 +58,7 @@
 					</c:forEach>
 				</tbody>
 			</table>
-			<h3>
-				<a href="index.html">Retour à l'accueil</a>
-			</h3>
+			
 		</div>
 </div>
 

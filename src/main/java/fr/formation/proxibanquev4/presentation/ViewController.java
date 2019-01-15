@@ -61,7 +61,7 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 		return mav;
 	}
 	
-	@RequestMapping({"", "index"})
+	@RequestMapping("closeSurvey")
 	public String closeSurvey(Integer id) {
 		this.surveyService.closeSurvey(id);
 		LOGGER.info("Sondage clôturé");
