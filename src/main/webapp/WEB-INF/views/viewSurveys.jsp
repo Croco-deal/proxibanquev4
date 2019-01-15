@@ -18,11 +18,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
+<!-- Custom styles for this template -->
+<link href="css/agency.min.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
-  <header class="masthead">
+ <header class="masthead">
 		<div class="container">
 			<div class="intro-text" style="padding-top: 150px; padding-bottom: 200px;">
 				<div class="intro-lead-in">Bienvenue sur le système
@@ -33,17 +36,13 @@
 	</header>
 
 <div class="admin-container">
-		<div class="chocoList">
-			<h2>Liste des types :</h2>
-			<table class="table table-stripped">
+			<table class="table table-stripped" id="table">
 				<thead>
 					<tr>
 						<th>N° Sondage</th>
 						<th>Date Ouverture</th>
 						<th>Oui</th>
 						<th>Non</th>
-				
-						
 					</tr>
 				</thead>
 				<tbody>
@@ -53,15 +52,12 @@
 							<td>${rbs.openDate}</td>
 							<td>${rbs.positiveResp}</td>
 							<td>${rbs.negativeResp}</td>
-							
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
-			
 		</div>
-</div>
-
+<a href="newSurvey.html"> <button class="btn btn-primary" id="redirect">Retour Accueil</button> </a>
 </body>
 
 </html>
