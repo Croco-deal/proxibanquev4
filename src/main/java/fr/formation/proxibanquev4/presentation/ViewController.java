@@ -32,10 +32,24 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 	@Transactional(readOnly=true) 
 	public class ViewController {
 
+		/**
+		 * Déclaration du Logger pour cette classe.
+		 */
 		private static final Logger LOGGER = Logger.getLogger(ViewController.class);
+		
+		/**
+		 * Injection d'une dépendance au service des sondages.
+		 */
 		@Autowired
 		private SurveyService surveyService;
 	
+	/**
+	 * Répond sur "http://localhost:8080/proxibanquev4/" et
+	 * "http://localhost:8080/proxibanquev4/index.html". Permet de préparer la page index avec 
+	 * le sondage existant, sa date d'ouverture, sa date de fermeture prévisonnelle et son id.
+	 * 
+	 * @return ModelAndView la vue index.
+	 */
 	@RequestMapping({ "", "index" })
 	public ModelAndView index() {
 		ModelAndView mav = new ModelAndView("index");
@@ -50,6 +64,12 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 		return mav;
 	}
 	
+	/**
+	 * Répond sur "http://localhost:8080/proxibanquev4/newSurvey.html". Prépare le formulaire avec les deux champs qui seront remplis par 
+	 * l'utilisateur, soit la date d'ouverture du sondage et sa date de fin prévisionnelle.
+	 * @return ModelAndView la page contenant le formulaire de création
+	 *         du sondage.
+	 */
 	@RequestMapping("newSurvey")
 	public ModelAndView showSurvey(){
 		ModelAndView mav = new ModelAndView("newSurvey");
@@ -59,12 +79,25 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 		return mav;
 	}
 	
+	/**
+	 * Répond sur le "Valider" du formulaire sur
+	 * "http://localhost:8080/proxibanquev4/newSurvey.html". Permet de créer un nouveau sondage.
+	 * 
+	 * @param survey un objet Survey avec une date d'ouverture et une date de fin prévisionnelle,  envoyés dans le
+	 *                corps de la requête.
+	 * @return String la chaine de redirection vers index.
+	 */
 	@RequestMapping(path="newSurvey", method=RequestMethod.POST)
 	public String createSurvey(Survey survey) {
 		this.surveyService.create(survey);
 		return RedirectConstant.REDIRECT_TO_INDEX;
 	}
 	
+	/**
+	 * Répond sur "http://localhost:8080/proxibanquev4/viewSurveys.html". Prépare la liste des sondages et de leurs réponses
+	 * (négatives et positives).
+	 * @return ModelAndView la page contenant la liste des sondages et de leurs réponses .
+	 */
 	@RequestMapping("viewSurveys")
 	public ModelAndView showAllResponsesBySurvey() {
 		ModelAndView mav = new ModelAndView();
@@ -75,6 +108,13 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 		return mav;
 	}
 	
+	/**
+	 * Répond sur "http://localhost:8080/proxibanquev4/closeSurvey.html". Permet de clôturer un sondage en cours en 
+	 * y ajoutant une date de fermeture.
+	 * 
+	 * @param id l'identifiant du sondage à clôturer.
+	 * @return ModelAndView la page contenant l'id du sondage supprimé.
+	 */
 	@RequestMapping("closeSurvey")
 	public ModelAndView closeSurvey(Integer id) {
 		ModelAndView mav = new ModelAndView("closeSurvey");
@@ -86,6 +126,12 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 		return mav;
 	}
 	
+	/**
+	 * Répond sur "http://localhost:8080/proxibanquev4/delete.html?id=". Permet de supprimer un sondage.
+	 * 
+	 * @param id l'identifiant du sondage à supprimer.
+	 * @return String la chaine de redirection vers le début du sondage.
+	 */
 	@RequestMapping("delete")
 	public String deleteSurvey(Integer id) {
 		this.surveyService.delete(id);
