@@ -12,6 +12,5 @@ import fr.formation.proxibanquev4.metier.entity.Client;
  *
  */
 @Repository
-public interface ClientDao extends JpaRepository<Client, Integer>{
+public interface ClientDao extends JpaRepository<Client, Integer> {
 }
-

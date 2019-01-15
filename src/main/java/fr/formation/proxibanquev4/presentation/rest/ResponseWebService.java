@@ -12,28 +12,29 @@ import fr.formation.proxibanquev4.metier.entity.Response;
 import fr.formation.proxibanquev4.metier.service.ResponseService;
 
 /**
- * Classe permettant de lier les réponses des sondages entre Java, Angular et la base de données.
+ * Classe permettant de lier les réponses des sondages entre Java, Angular et la
+ * base de données.
  * 
  * @author JLSS
  *
  */
 @RestController
 @RequestMapping("/response")
-@Transactional(readOnly=true)
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:8080"})
+@Transactional(readOnly = true)
+@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080" })
 public class ResponseWebService {
 
 	@Autowired
 	private ResponseService responseService;
-	
-	 /**
-	 * Méthode permettant de retourner la 'response' créée lors de la réponse à un sondage.
+
+	/**
+	 * Méthode permettant de retourner la 'response' créée lors de la réponse à un
+	 * sondage.
 	 * 
 	 * @param resp
-	 * @return
 	 */
 	@PostMapping
-	    public Response create(@RequestBody Response resp) {
-	        return this.responseService.create(resp);
-	    }
+	public Response create(@RequestBody Response resp) {
+		return this.responseService.create(resp);
+	}
 }

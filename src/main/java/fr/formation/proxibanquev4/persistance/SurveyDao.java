@@ -12,7 +12,6 @@ import fr.formation.proxibanquev4.metier.entity.Survey;
  *
  */
 @Repository
-public interface SurveyDao extends JpaRepository<Survey, Integer>{
-	
-}
+public interface SurveyDao extends JpaRepository<Survey, Integer> {
 
+}

@@ -14,22 +14,24 @@ import fr.formation.proxibanquev4.metier.entity.Client;
 import fr.formation.proxibanquev4.metier.service.ClientService;
 
 /**
- * Classe permettant de lier les clients entre Java, Angular et la base de données.
+ * Classe permettant de lier les clients entre Java, Angular et la base de
+ * données.
  * 
  * @author JLSS
  *
  */
 @RestController
 @RequestMapping("/client")
-@Transactional(readOnly=true)
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:8080"})
+@Transactional(readOnly = true)
+@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080" })
 public class ClientWebService {
 
 	@Autowired
 	private ClientService clientService;
-	
+
 	/**
-	 * Méthode permettant de retourner un 'client' si ce dernier possède bien un 'number'.
+	 * Méthode permettant de retourner un 'client' si ce dernier possède bien un
+	 * 'number'.
 	 * 
 	 * @param number : numéro d'identification du client (String).
 	 * @return Client.
@@ -38,12 +40,12 @@ public class ClientWebService {
 	public Client existingClient(@PathVariable String number) {
 		Client existingClient = null;
 		List<Client> clients = this.clientService.getAll();
-			for (Client client: clients) {
-				if (number.equals(client.getClientNumber())) {
-					existingClient = client;
-					break;
-				}
+		for (Client client : clients) {
+			if (number.equals(client.getClientNumber())) {
+				existingClient = client;
+				break;
 			}
+		}
 		return existingClient;
 	}
 }

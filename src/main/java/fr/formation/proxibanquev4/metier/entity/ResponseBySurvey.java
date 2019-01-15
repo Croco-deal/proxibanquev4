@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 /**
  * Classe represantant les reponses d'un survey
+ * 
  * @author JLSS
  *
  */
@@ -17,6 +18,14 @@ public class ResponseBySurvey {
 
 	private LocalDate openDate;
 
+	/**
+	 * Constructeur avec attributs.
+	 * 
+	 * @param idSurvey
+	 * @param positiveResp
+	 * @param negativeResp
+	 * @param openDate
+	 */
 	public ResponseBySurvey(Integer idSurvey, Integer positiveResp, Integer negativeResp, LocalDate openDate) {
 		this.idSurvey = idSurvey;
 		this.positiveResp = positiveResp;
@@ -24,8 +33,10 @@ public class ResponseBySurvey {
 		this.openDate = openDate;
 	}
 
+	/**
+	 * Constructeur sans attribut.
+	 */
 	public ResponseBySurvey() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Integer getIdSurvey() {

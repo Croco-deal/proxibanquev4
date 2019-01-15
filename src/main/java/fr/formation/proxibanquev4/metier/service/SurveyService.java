@@ -14,8 +14,9 @@ import fr.formation.proxibanquev4.metier.entity.Survey;
 import fr.formation.proxibanquev4.persistance.SurveyDao;
 
 /**
- * Classe héritant de la classe abstraite RestService<ENTITY>
- * Comporatant les différents méthodes service qu'on utilise  dans le viewController
+ * Classe héritant de la classe abstraite RestService<ENTITY> Comportant les
+ * différents méthodes service qu'on utilise dans le viewController.
+ * 
  * @author JLSS
  *
  */
@@ -24,45 +25,57 @@ public class SurveyService extends RestService<Survey> {
 
 	@Autowired
 	private SurveyDao surveyDao;
-    /**
-     * Méthode permettant de retourner un objet surveyDao.
-     */
+
+	/**
+	 * Méthode permettant de retourner un objet surveyDao.
+	 */
 	@Override
 	protected JpaRepository<Survey, Integer> getDao() {
 		return this.surveyDao;
 	}
-    /**
-     * Méthode permettant de fermer un Survey en mettant la date de fermeture en date du jour
-     * @param id identifiant du Survey
-     * @return l'objet Survey mise à jour.
-     */
+
+	/**
+	 * Méthode permettant de fermer un 'Survey' en mettant la date de fermeture en
+	 * date du jour
+	 * 
+	 * @param id : identifiant du sondage
+	 * @return l'objet Survey mise à jour.
+	 */
 	public Survey closeSurvey(Integer id) {
 		Survey survey = this.surveyDao.getOne(id);
 		survey.setCloseDate(LocalDate.now());
 		this.surveyDao.save(survey);
 		return survey;
 	}
-    /**
-     * Méthode permettant de retourner tous les Survey enregistrés en base de données
-     * @return une liste de Survey.
-     */
+
+	/**
+	 * Méthode permettant de retourner tous les sondages enregistrés en base de
+	 * données
+	 * 
+	 * @return une liste de Survey.
+	 */
 	public List<Survey> getAll() {
 		return this.surveyDao.findAll();
 	}
+
 	/**
-	 * Méthode permettant de retourner un Survey de la base de données  en lui donnant le paramètre id du Survey
-	 * @param id l'identifaint du Survey
-	 * @return un objet Survey.
+	 * Méthode permettant de retourner un sondage de la base de données en lui
+	 * donnant le paramètre 'id' du sondage.
+	 * 
+	 * @param id : l'identifaint du 'Survey'
+	 * @return un objet 'Survey'.
 	 */
 	public Survey getOne(Integer id) {
 		Survey survey = this.surveyDao.getOne(id);
 		return survey;
 	}
 
-      /**
-       * Méthode permettant de retourner la liste de toutes les réponses  positives et négatives d'un survey
-       * @return liste des réponses du survey
-       */
+	/**
+	 * Méthode permettant de retourner la liste de toutes les réponses positives et
+	 * négatives d'un 'survey'.
+	 * 
+	 * @return liste des réponses du 'survey'
+	 */
 	public List<ResponseBySurvey> ShowAllResponsesBySurvey() {
 		List<ResponseBySurvey> list = new ArrayList<>();
 		List<Survey> allSurvey = this.getAll();
@@ -80,9 +93,12 @@ public class SurveyService extends RestService<Survey> {
 
 		return list;
 	}
+
 	/**
 	 * Méthode permattant de retourner le nombre réponses positives d'un survey
-	 * @param id l'identifiant de survey dont on veut récupérer le nombre réponses positives
+	 * 
+	 * @param id : l'identifiant de survey dont on veut récupérer le nombre réponses
+	 *           positives
 	 * @return le nombre de réponses positives du survey.
 	 */
 
@@ -97,9 +113,12 @@ public class SurveyService extends RestService<Survey> {
 		}
 		return i;
 	}
+
 	/**
 	 * Méthode permattant de retourner le nombre réponses négatives d'un survey
-	 * @param id l'identifiant de survey dont on veut récupérer le nombre réponses négatives
+	 * 
+	 * @param id : l'identifiant de survey dont on veut récupérer le nombre réponses
+	 *           négatives
 	 * @return le nombre de réponses négatives du survey.
 	 */
 
@@ -108,9 +127,12 @@ public class SurveyService extends RestService<Survey> {
 		Integer falseResponses = survey.getResponses().size() - this.getTrueResponses(id);
 		return falseResponses;
 	}
+
 	/**
 	 * Méthode permettant de vérifier l'existance d'un Survey en cours
-	 * @return return un survey s'il y a un survey en cours et null s'il y a pas de survey en cours
+	 * 
+	 * @return return un survey s'il y a un survey en cours et null s'il y a pas de
+	 *         survey en cours
 	 */
 	public Survey existingSurvey() {
 		List<Survey> allSurvey = this.getAll();
@@ -122,9 +144,11 @@ public class SurveyService extends RestService<Survey> {
 		}
 		return existingSurvey;
 	}
+
 	/**
 	 * Méthode permettant de supprimer un Survey à partir de son identifiant
-	 * @param id l'identifiant du Survey
+	 * 
+	 * @param id : l'identifiant du 'Survey'.
 	 */
 	public void deleteSurvey(Integer id) {
 		this.surveyDao.deleteById(id);

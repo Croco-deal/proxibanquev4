@@ -11,20 +11,21 @@ import fr.formation.proxibanquev4.metier.entity.Survey;
 import fr.formation.proxibanquev4.metier.service.SurveyService;
 
 /**
- * Classe permettant de lier les sondages entre Java, Angualar et la base de donnéess.
+ * Classe permettant de lier les sondages entre Java, Angualar et la base de
+ * donnéess.
  * 
  * @author JLSS
  *
  */
 @RestController
 @RequestMapping("/survey")
-@Transactional(readOnly=true)
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:8080"})
+@Transactional(readOnly = true)
+@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080" })
 public class SurveyWebService {
 
 	@Autowired
 	private SurveyService surveyService;
-	
+
 	/**
 	 * Méthode permettant de retourner l'existance d'un sondage.
 	 */

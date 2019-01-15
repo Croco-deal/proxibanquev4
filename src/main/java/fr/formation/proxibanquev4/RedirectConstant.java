@@ -1,7 +1,8 @@
 package fr.formation.proxibanquev4;
 
 /**
- * Classe représentant les constantes pour la redirection vers l'index et vers un nouveau sondage.
+ * Classe représentant les constantes pour la redirection vers l'index et vers
+ * un nouveau sondage.
  * 
  * @author JLSS
  *

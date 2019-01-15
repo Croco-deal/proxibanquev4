@@ -10,8 +10,9 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
- * Classe représentant toutes les informations d'un client
- * Avec les annotations JPA permettant de persister la classe en base de données
+ * Classe représentant toutes les informations d'un client Avec les annotations
+ * JPA permettant de persister la classe en base de données
+ * 
  * @author JLSS
  *
  */
@@ -40,11 +41,14 @@ public class Client {
 	@Column
 	private String tel;
 
+	/**
+	 * Constructeur sans attribut.
+	 */
 	public Client() {
 	}
 
 	/**
-	 * Constructeur utilisant les attributs
+	 * Constructeur utilisant les attributs.
 	 * 
 	 * @param id
 	 * @param clientNumber

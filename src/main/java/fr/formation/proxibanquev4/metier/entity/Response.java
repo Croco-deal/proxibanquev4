@@ -13,8 +13,10 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
- * Classe permettant de représenter la classe Respense avce ses différents attributs 
- * avec des annotations JPA permettant de persister la classe en base de données
+ * Classe permettant de représenter la classe Respense avce ses différents
+ * attributs avec des annotations JPA permettant de persister la classe en base
+ * de données
+ * 
  * @author JLSS
  *
  */
@@ -41,9 +43,20 @@ public class Response {
 	@ManyToOne
 	private Survey survey;
 
+	/**
+	 * Constructeur sans attribut.
+	 */
 	public Response() {
 	}
 
+	/**
+	 * Constructeur avec attributs.
+	 * 
+	 * @param id
+	 * @param isTrue
+	 * @param comment
+	 * @param client
+	 */
 	public Response(Integer id, Boolean isTrue, String comment, Client client) {
 		this.id = id;
 		this.isTrue = isTrue;
@@ -90,6 +103,4 @@ public class Response {
 	public void setSurvey(Survey survey) {
 		this.survey = survey;
 	}
-
-	
 }
