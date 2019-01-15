@@ -48,8 +48,8 @@ public class Survey {
 	@OneToMany(mappedBy="survey")
 	private List<Response> responses;
 	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate date;
+//	@DateTimeFormat(pattern = "yyyy-MM-dd")
+//	private LocalDate date;
 
 	public Integer getId() {
 		return id;
@@ -99,13 +99,13 @@ public class Survey {
 		this.responses = responses;
 	}
 
-	public LocalDate getDate() {
-		return date;
-	}
-
-	public void setDate(LocalDate date) {
-		this.date = date;
-	}
+//	public LocalDate getDate() {
+//		return date;
+//	}
+//
+//	public void setDate(LocalDate date) {
+//		this.date = date;
+//	}
 
 	public Survey() {
 		// TODO Auto-generated constructor stub

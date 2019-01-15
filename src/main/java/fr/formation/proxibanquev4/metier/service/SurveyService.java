@@ -1,5 +1,6 @@
 package fr.formation.proxibanquev4.metier.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,6 @@ public class SurveyService extends RestService<Survey> {
 
 	@Autowired
 	private SurveyDao surveyDao;
-	private List<ResponseBySurvey> responseBySurvey;
 
 	@Override
 	protected JpaRepository<Survey, Integer> getDao() {
@@ -26,7 +26,7 @@ public class SurveyService extends RestService<Survey> {
 
 	public Survey closeSurvey(Integer id) {
 		Survey survey = this.surveyDao.getOne(id);
-		survey.setEndDate(survey.getDate().now());
+		survey.setCloseDate(LocalDate.now());
 		this.surveyDao.save(survey);
 		return survey;
 	}
@@ -86,5 +86,9 @@ public class SurveyService extends RestService<Survey> {
 			}
 		}
 		return existingSurvey;
+	}
+	
+	public void deleteSurvey(Integer id) {
+		this.surveyDao.deleteById(id);
 	}
 }

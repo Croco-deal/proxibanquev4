@@ -43,6 +43,7 @@
 						<th>Date Ouverture</th>
 						<th>Oui</th>
 						<th>Non</th>
+						<th>Supprimer</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -52,6 +53,9 @@
 							<td>${rbs.openDate}</td>
 							<td>${rbs.positiveResp}</td>
 							<td>${rbs.negativeResp}</td>
+							<td> <div id="delete">
+                     				<img src="./img/delete.svg">
+                </div>
 						</tr>
 					</c:forEach>
 				</tbody>

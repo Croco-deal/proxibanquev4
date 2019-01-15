@@ -116,6 +116,17 @@ header.masthead {
 	margin-top: 4.5em;
 }
 
+#small-text{
+	text-align: center;
+	color:grey;
+	margin-top: 10px
+}
+
+#delete {
+	height: 20px;
+	width: 20px;
+	}
+	
 #table {
 	width: 50%;
 	margin-top: 50px;
@@ -127,6 +138,38 @@ header.masthead {
 	margin-top: 50px;
 	margin-left: 30px;
 	margin-right: 30px;
+}
+
+#form-survey {
+	width: 1200px;
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 30px
+}
+
+#redirect2 {
+	background-color: #212529;
+	border-color: #212529;
+	color: white;
+	margin-left:1450px
+}
+
+#btnp-disabled{
+	background-color: grey;
+	margin-top: 50px;
+	border-color: grey;
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+#div-btn{
+	margin-left: 1300px;
+}
+
+h2 {
+	text-align: center;
+	margin-top: 20px;
 }
 #redirect{
 	margin-left: 1300px;

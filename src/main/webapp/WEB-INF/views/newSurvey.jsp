@@ -51,11 +51,11 @@
 	
 <div class="container">	
         <form action="" method="post">
-				<div class="form-group">
+				<div class="form-group" id="form-survey">
 					<label style="margin-top: 20px" for="openDate">Date d'ouverture :</label>
 					<input placeholder="yyyy-MM-dd" type="date" id="openDate" name="openDate" class="form-control" />
 				</div>
-				<div class="form-group">
+				<div class="form-group" id="form-survey">
 					<label for="endDate">Date de fermeture :</label>
 					<input placeholder="yyyy-MM-dd" type="date" id="endDate" name="endDate" class="form-control" />
 				</div>
@@ -64,7 +64,7 @@
 				
 			</form>
 </div>
-<a href="index.html"> <button class="btn btn-warning" id="redirect">Retour Accueil</button> </a>
+<a href="index.html"> <button class="btn btn-warning" id="redirect2">Retour Accueil</button> </a>
 
 </body>
 
