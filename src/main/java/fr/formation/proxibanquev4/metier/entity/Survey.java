@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -24,18 +26,22 @@ public class Survey {
 	@Column
 	private Integer id;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column
 	private LocalDate openDate;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column
 	private LocalDate endDate;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column
 	private LocalDate closeDate;
 
 	@OneToMany(mappedBy="survey")
 	private List<Response> responses;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate date;
 
 	public Integer getId() {

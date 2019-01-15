@@ -39,11 +39,10 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 	
 	@RequestMapping("newSurvey")
 	public ModelAndView showSurvey(){
-//		Survey survey = new Survey();
-//		mav.addObject("openDate", survey.getOpenDate());
-//		mav.addObject("endDate", survey.getEndDate());
 		ModelAndView mav = new ModelAndView("newSurvey");
-
+		Survey survey = new Survey();
+		mav.addObject("openDate", survey.getOpenDate());
+		mav.addObject("endDate", survey.getEndDate());
 		return mav;
 	}
 	
