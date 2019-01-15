@@ -4,5 +4,6 @@ public class RedirectConstant {
 
 	public static final String REDIRECT_TO_INDEX = "redirect:/index.html";
 	public static final String REDIRECT_TO_NEW_SURVEY = "redirect:/newSurvey.html";
+	public static final String REDIRECT_TO_VIEW_SURVEYS = "redirect:/viewSurveys.html";
 
 }

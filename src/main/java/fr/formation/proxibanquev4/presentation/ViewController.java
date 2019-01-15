@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import fr.formation.proxibanquev4.RedirectConstant;
@@ -24,8 +25,6 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 		private static final Logger LOGGER = Logger.getLogger(ViewController.class);
 		@Autowired
 		private SurveyService surveyService;
-		@Autowired
-		private ResponseService responseService;
 	
 	@RequestMapping({ "", "index" })
 	public ModelAndView index() {
@@ -34,6 +33,9 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 		if (surveyExists != null) {
 			mav.addObject("surveyExists",surveyExists);
 			LOGGER.info("Page Index-Sondage affichée!");
+			mav.addObject("openDate", surveyExists.getOpenDate());
+			mav.addObject("endDate", surveyExists.getEndDate());
+			mav.addObject("idSurvey", surveyExists.getId());
 		} 
 		return mav;
 	}
@@ -64,9 +66,19 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 	}
 	
 	@RequestMapping("closeSurvey")
-	public String closeSurvey(Integer id) {
+	public ModelAndView closeSurvey(Integer id) {
+		ModelAndView mav = new ModelAndView("closeSurvey");
+		Survey surveyExists = this.surveyService.existingSurvey();
 		this.surveyService.closeSurvey(id);
+		mav.addObject("surveyExists", surveyExists);
+		mav.addObject("idSurvey", surveyExists.getId());
 		LOGGER.info("Sondage clôturé");
-		return RedirectConstant.REDIRECT_TO_INDEX;
+		return mav;
+	}
+	
+	@RequestMapping("delete")
+	public String deleteSurvey(Integer id) {
+		this.surveyService.delete(id);
+		return RedirectConstant.REDIRECT_TO_VIEW_SURVEYS;
 	}
 }

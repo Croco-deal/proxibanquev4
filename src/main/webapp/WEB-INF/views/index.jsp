@@ -36,18 +36,37 @@
 			</div>
 		</div>
 	</header>
-	
-<div <c:if test="${surveyExists != null}"></c:if>>
-<h2> Sondage en cours: </h2>
 
+
+<div>
+	<c:if test="${surveyExists != null}">
+		<h2> Sondage en cours: Assurance Auto n° ${surveyExists.id} </h2>
+		<div id="small-text">
+			<p> Date d'ouverture: ${surveyExists.openDate} // Date de fermeture: ${surveyExists.endDate} </p>
+		</div>
+	</c:if>
+	<c:if test="${surveyExists == null}">
+		<h2 > Aucun sondage en cours! </h2>
+	</c:if>
 </div>
 	
-<div style="text-align:center">
- <a href="newSurvey.html"> <button class="btn btn-primary" id="btnp"  <c:if test="${surveyExists != null}"><c:out value="disabled='disabled'"/></c:if>>Créer un sondage</button> </a>
-  <a href="closeSurvey.html"></a><button class="btn btn-primary" id="btnp">Arrêter un sondage </button></a>
-  <a href="viewSurveys.html"><button class="btn btn-primary" id="btnp">Visualiser les sondages</button></a>
+<div style="text-align:center" >
+	<c:if test="${surveyExists != null}">
+		<button id="btnp-disabled" class="btn btn-primary"<c:out value="disabled='disabled'"/>>Créer un sondage</button> 
+	<a href="closeSurvey.html?id=${surveyExists.id}">
+		<button class="btn btn-primary" id="btnp">Arrêter le sondage</button> 
+	</a>
+	</c:if>
+	<c:if test="${surveyExists == null}">
+	<a href="newSurvey.html">
+		<button class="btn btn-primary" id="btnp">Créer un sondage</button> 
+	</a>
+		<button id="btnp-disabled" class="btn btn-primary"<c:out value="disabled='disabled'"/>>Arrêter le sondage</button> 
+	</c:if>
+	 <a href="viewSurveys.html"><button class="btn btn-primary" id="btnp">Visualiser les sondages</button></a>
 </div>
 
 </body>
+
 
 </html>
