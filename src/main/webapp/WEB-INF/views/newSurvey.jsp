@@ -46,7 +46,22 @@
 		</div>
 	</header>
 
-
+        <form action="" method="post">
+				
+				
+				
+				<div class="form-group">
+					<label for="openDate">Date d'ouverture :</label>
+					<input id="openDate" name="openDate" class="form-control" />
+				</div>
+				<div class="form-group">
+					<label for="endDate">Date de fermeture :</label>
+					<input id="endDate" name="endDate" class="form-control" />
+				</div>
+				<button class="btn btn-primary">Valider</button>
+				<button type="reset" class="btn btn-warning">Annuler</button>
+		
+			</form>
 </body>
 
 </html>
