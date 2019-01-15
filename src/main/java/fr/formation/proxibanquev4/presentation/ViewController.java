@@ -60,7 +60,7 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 		return mav;
 	}
 	
-	@RequestMapping({"", "index"})
+	@RequestMapping("closeSurvey")
 	public String closeSurvey(Integer id) {
 		Survey survey = this.surveyService.closeSurvey(id);
 		return RedirectConstant.REDIRECT_TO_INDEX;

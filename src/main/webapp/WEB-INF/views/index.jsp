@@ -27,9 +27,18 @@
 </head>
 
 <body id="page-top">
+<header class="masthead">
+		<div class="container">
+			<div class="intro-text" style="padding-top: 150px; padding-bottom: 200px;">
+				<div class="intro-lead-in">Bienvenue sur le système
+					d'information</div>
+				<div class="intro-heading text-uppercase">PROXIBANQUE</div>
+			</div>
+		</div>
+	</header>
 <div style="text-align:center">
  <a href="newSurvey.html"> <button class="btn btn-primary">Créer un sondage</button> </a>
-  <button class="btn btn-primary">Arrêter un sondage </button>
+  <a href="closeSurvey.html"></a><button class="btn btn-primary">Arrêter un sondage </button></a>
   <a href="viewSurveys.html"><button class="btn btn-primary">Visualiser les sondages</button></a>
 </div>
 
