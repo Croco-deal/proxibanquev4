@@ -2,6 +2,11 @@ package fr.formation.proxibanquev4.metier.entity;
 
 import java.time.LocalDate;
 
+/**
+ * Classe represantant les reponses d'un survey
+ * @author JLSS
+ *
+ */
 public class ResponseBySurvey {
 
 	private Integer idSurvey;

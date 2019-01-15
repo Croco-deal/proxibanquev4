@@ -9,11 +9,19 @@ import org.springframework.stereotype.Service;
 import fr.formation.proxibanquev4.metier.entity.Response;
 import fr.formation.proxibanquev4.persistance.ResponseDao;
 
+/**
+ * Classe héritant de la classe abstraite RestService<ENTITY>
+ * Comporatant les différents méthodes service qu'on utilise  dans le viewController
+ * @author JLSS
+ *
+ */
 @Service
 public class ResponseService extends RestService<Response> {
 	@Autowired
 	private ResponseDao responseDao;
-	
+	/**
+	 * Méthode permettant de retourner un objet reponseDao.
+	 */
 	@Override
 	protected JpaRepository<Response, Integer> getDao() {
 		return this.responseDao;
