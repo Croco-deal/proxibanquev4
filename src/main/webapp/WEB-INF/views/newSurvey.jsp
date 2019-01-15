@@ -46,7 +46,25 @@
 		</div>
 	</header>
 
-
+        <form:form modelAttribute="survey" method="post">
+				
+				<div class="form-group">
+					<label for="label">Libellé :</label>
+					<form:input id="label" path="label" class="form-control" />
+				</div>
+				
+				<div class="form-group">
+					<label for="openDate">Date d'ouverture :</label>
+					<form:input id="openDate" path="openDate" class="form-control" />
+				</div>
+				<div class="form-group">
+					<label for="endDate">Date de fermeture :</label>
+					<form:input id="enDate" path="endDate" class="form-control" />
+				</div>
+				<button class="btn btn-primary">Valider</button>
+				<button type="reset" class="btn btn-warning">Annuler</button>
+		
+			</form:form>
 </body>
 
 </html>
