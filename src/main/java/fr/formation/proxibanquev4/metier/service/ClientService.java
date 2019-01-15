@@ -1,5 +1,7 @@
 package fr.formation.proxibanquev4.metier.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
@@ -18,4 +20,7 @@ public class ClientService extends RestService<Client> {
 		return this.clientDao;
 	}
 	
+	public List<Client> getAll() {
+		return this.clientDao.findAll();
+	}
 }
