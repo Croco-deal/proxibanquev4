@@ -34,9 +34,25 @@ public class SurveyService extends RestService<Survey> {
 	public List<Survey> getAll() {
 		return this.surveyDao.findAll();
 	}
+	
+	public Survey getOne(Integer id) {
+		Survey survey = this.surveyDao.getOne(id);
+		return survey;
+	}
+
+	public boolean isSurvey() {
+		boolean isSurvey = false;
+		List<Survey> allSurvey = this.getAll();
+		for (Survey survey : allSurvey) {
+			if (survey.getCloseDate() == null) {
+				isSurvey = true;
+			}
+		}
+		return isSurvey;
+	}
 
 	public List<ResponseBySurvey> ShowAllResponsesBySurvey() {
-		List<ResponseBySurvey> list = new ArrayList<>();		
+		List<ResponseBySurvey> list = new ArrayList<>();
 		List<Survey> allSurvey = this.getAll();
 		for (Survey survey : allSurvey) {
 			ResponseBySurvey rbs = new ResponseBySurvey();
@@ -49,7 +65,7 @@ public class SurveyService extends RestService<Survey> {
 			rbs.setNegativeResp(falseResponses);
 			list.add(rbs);
 		}
-		
+
 		return list;
 	}
 
@@ -61,7 +77,7 @@ public class SurveyService extends RestService<Survey> {
 			if (response.getIsTrue()) {
 				i++;
 				return i;
-			} 
+			}
 		}
 		return i;
 	}

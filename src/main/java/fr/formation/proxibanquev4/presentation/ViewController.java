@@ -30,9 +30,10 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 	@RequestMapping({ "", "index" })
 	public ModelAndView index() {
 		ModelAndView mav = new ModelAndView("index");
-		String message = "Bienvenue sur votre espace sondage Proxibanquev4!";
-		mav.addObject("message", message);
-		LOGGER.info("Page Index-Sondage affichée!");
+//		if (this.surveyService.isSurvey() == true) {
+//			Survey survey = this.surveyService.getOne(id);
+//			LOGGER.info("Page Index-Sondage affichée!");
+//		}
 		return mav;
 	}
 	
@@ -62,7 +63,8 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 	
 	@RequestMapping({"", "index"})
 	public String closeSurvey(Integer id) {
-		Survey survey = this.surveyService.closeSurvey(id);
+		this.surveyService.closeSurvey(id);
+		LOGGER.info("Sondage clôturé");
 		return RedirectConstant.REDIRECT_TO_INDEX;
 	}
 }
