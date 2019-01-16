@@ -1,7 +1,5 @@
 package fr.formation.proxibanquev4.presentation.filter;
 
-
-
 import java.io.IOException;
 
 import javax.servlet.Filter;
@@ -13,7 +11,7 @@ import javax.servlet.ServletResponse;
 
 import fr.formation.proxibanquev4.presentation.filter.ForceEncodingFilter;
 
-public class ForceEncodingFilter implements Filter{
+public class ForceEncodingFilter implements Filter {
 	private static final String CHARSET = "UTF-8";
 
 	@Override
@@ -30,6 +28,4 @@ public class ForceEncodingFilter implements Filter{
 	@Override
 	public void destroy() {
 	}
-
-	
 }

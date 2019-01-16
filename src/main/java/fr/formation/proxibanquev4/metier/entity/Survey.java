@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -16,6 +15,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * Classe permettant de représenter la classe Survey avec les annotions de
+ * bases de données permettant de persister la classe en base de données.
+ * 
+ * @author JLSS
+ *
+ */
 @Entity
 @Table(name = "survey")
 @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler", "responses" })
@@ -38,11 +44,31 @@ public class Survey {
 	@Column
 	private LocalDate closeDate;
 
-	@OneToMany(mappedBy="survey")
+	@OneToMany(mappedBy = "survey")
 	private List<Response> responses;
-	
-//	@DateTimeFormat(pattern = "yyyy-MM-dd")
-//	private LocalDate date;
+
+	/**
+	 * Constructeur avec attributs.
+	 * 
+	 * @param id
+	 * @param openDate
+	 * @param endDate
+	 * @param closeDate
+	 * @param responses
+	 */
+	public Survey(Integer id, LocalDate openDate, LocalDate endDate, LocalDate closeDate, List<Response> responses) {
+		this.id = id;
+		this.openDate = openDate;
+		this.endDate = endDate;
+		this.closeDate = closeDate;
+		this.responses = responses;
+	}
+
+	/**
+	 * Constructeur sans attribut.
+	 */
+	public Survey() {
+	}
 
 	public Integer getId() {
 		return id;
@@ -82,25 +108,5 @@ public class Survey {
 
 	public void setResponses(List<Response> responses) {
 		this.responses = responses;
-	}
-
-	public Survey(Integer id, LocalDate openDate, LocalDate endDate, LocalDate closeDate, List<Response> responses) {
-		this.id = id;
-		this.openDate = openDate;
-		this.endDate = endDate;
-		this.closeDate = closeDate;
-		this.responses = responses;
-	}
-
-//	public LocalDate getDate() {
-//		return date;
-//	}
-//
-//	public void setDate(LocalDate date) {
-//		this.date = date;
-//	}
-
-	public Survey() {
-		// TODO Auto-generated constructor stub
 	}
 }
