@@ -7,15 +7,17 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.formation.proxibanquev4.metier.entity.Client;
+import fr.formation.proxibanquev4.metier.entity.Response;
 import fr.formation.proxibanquev4.metier.service.ClientService;
 
 /**
- * Classe permettant de lier les clients entre Java, Angular et la base de
- * données.
+ * Classe permettant de lier les données relatives au client entre l'application JEE et l'application Angular.
  * 
  * @author JLSS
  *
@@ -31,21 +33,32 @@ public class ClientWebService {
 
 	/**
 	 * Méthode permettant de retourner un 'client' si ce dernier possède bien un
-	 * 'number'.
+	 * numéro de client (attribut clientNumber).
 	 * 
-	 * @param number : numéro d'identification du client (String).
-	 * @return Client.
+	 * @param clientNumber : numéro d'identification du client (String).
+	 * @return objet de type Client.
 	 */
-	@GetMapping("/{number}")
-	public Client existingClient(@PathVariable String number) {
+	@GetMapping("/{clientNumber}")
+	public Client existingClient(@PathVariable String clientNumber) {
 		Client existingClient = null;
 		List<Client> clients = this.clientService.getAll();
 		for (Client client : clients) {
-			if (number.equals(client.getClientNumber())) {
+			if (clientNumber.equals(client.getClientNumber())) {
 				existingClient = client;
 				break;
 			}
 		}
 		return existingClient;
+	}
+	
+	/**
+	 * Méthode permettant de récupérer l'objet client de type Client, contenant
+	 * les informations du nouveau client créé sur l'application Angular 
+	 * 
+	 * @param client 
+	 */
+	@PostMapping
+	public Client create(@RequestBody Client client) {
+		return this.clientService.create(client);
 	}
 }

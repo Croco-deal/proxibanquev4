@@ -42,7 +42,7 @@ public class Client {
 	private String tel;
 
 	/**
-	 * Constructeur sans attribut.
+	 * Constructeur vide.
 	 */
 	public Client() {
 	}

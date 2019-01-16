@@ -12,8 +12,8 @@ import fr.formation.proxibanquev4.metier.entity.Response;
 import fr.formation.proxibanquev4.metier.service.ResponseService;
 
 /**
- * Classe permettant de lier les réponses des sondages entre Java, Angular et la
- * base de données.
+ * Classe permettant de lier les données relative aux réponses du sondage 
+ * entre l'application JEE et l'application Angular.
  * 
  * @author JLSS
  *
@@ -28,8 +28,8 @@ public class ResponseWebService {
 	private ResponseService responseService;
 
 	/**
-	 * Méthode permettant de retourner la 'response' créée lors de la réponse à un
-	 * sondage.
+	 * Méthode permettant de récupérer l'objet response de type Response, créée lors de la réponse à un
+	 * sondage sur l'application Angular. 
 	 * 
 	 * @param resp
 	 */

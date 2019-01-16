@@ -11,7 +11,7 @@ import fr.formation.proxibanquev4.metier.entity.Survey;
 import fr.formation.proxibanquev4.metier.service.SurveyService;
 
 /**
- * Classe permettant de lier les sondages entre Java, Angualar et la base de
+ * Classe permettant de lier les données relatives aux sondages entre Java, Angualar et la base de
  * donnéess.
  * 
  * @author JLSS
