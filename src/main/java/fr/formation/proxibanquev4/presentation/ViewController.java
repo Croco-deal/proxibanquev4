@@ -78,6 +78,7 @@ import fr.formation.proxibanquev4.metier.service.SurveyService;
 	
 	@RequestMapping("delete")
 	public String deleteSurvey(Integer id) {
+		LOGGER.debug("Action suppression d'un sondage!");
 		this.surveyService.delete(id);
 		return RedirectConstant.REDIRECT_TO_VIEW_SURVEYS;
 	}

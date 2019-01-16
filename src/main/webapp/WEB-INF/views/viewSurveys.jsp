@@ -54,7 +54,9 @@
 							<td>${rbs.positiveResp}</td>
 							<td>${rbs.negativeResp}</td>
 							<td> <div id="delete">
+							<a href="delete.html?id=${rbs.idSurvey}">
                      				<img src="./img/delete.svg">
+                     				</a>
                 </div>
 						</tr>
 					</c:forEach>
