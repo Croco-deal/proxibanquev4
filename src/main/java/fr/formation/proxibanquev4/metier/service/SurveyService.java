@@ -28,6 +28,7 @@ public class SurveyService extends RestService<Survey> {
 
 	/**
 	 * Méthode permettant de retourner un objet surveyDao.
+	 * @return JpaRepository<Survey, Integer>
 	 */
 	@Override
 	protected JpaRepository<Survey, Integer> getDao() {
@@ -52,7 +53,7 @@ public class SurveyService extends RestService<Survey> {
 	 * Méthode permettant de retourner tous les sondages enregistrés en base de
 	 * données
 	 * 
-	 * @return une liste de Survey.
+	 * @return List<Survey>, une liste de Survey.
 	 */
 	public List<Survey> getAll() {
 		return this.surveyDao.findAll();
@@ -74,7 +75,7 @@ public class SurveyService extends RestService<Survey> {
 	 * Méthode permettant de retourner la liste de toutes les réponses positives et
 	 * négatives d'un 'survey'.
 	 * 
-	 * @return liste des réponses du 'survey'
+	 * @return liste des réponses du 'survey', objet de type List<ResponseBySurvey>
 	 */
 	public List<ResponseBySurvey> ShowAllResponsesBySurvey() {
 		List<ResponseBySurvey> list = new ArrayList<>();
@@ -99,7 +100,7 @@ public class SurveyService extends RestService<Survey> {
 	 * 
 	 * @param id : l'identifiant de survey dont on veut récupérer le nombre réponses
 	 *           positives
-	 * @return le nombre de réponses positives du survey.
+	 * @return i, le nombre de réponses positives du sondage.
 	 */
 
 	public Integer getTrueResponses(Integer id) {
@@ -131,8 +132,8 @@ public class SurveyService extends RestService<Survey> {
 	/**
 	 * Méthode permettant de vérifier l'existance d'un Survey en cours
 	 * 
-	 * @return return un survey s'il y a un survey en cours et null s'il y a pas de
-	 *         survey en cours
+	 * @return return existingSurvey, objet de type Survey s'il y a un sondage en cours et "null" s'il y a pas de
+	 *         sondage en cours
 	 */
 	public Survey existingSurvey() {
 		List<Survey> allSurvey = this.getAll();
@@ -146,9 +147,9 @@ public class SurveyService extends RestService<Survey> {
 	}
 
 	/**
-	 * Méthode permettant de supprimer un Survey à partir de son identifiant
+	 * Méthode permettant de supprimer un sondage à partir de son identifiant
 	 * 
-	 * @param id : l'identifiant du 'Survey'.
+	 * @param id : l'identifiant du sondage.
 	 */
 	public void deleteSurvey(Integer id) {
 		this.surveyDao.deleteById(id);

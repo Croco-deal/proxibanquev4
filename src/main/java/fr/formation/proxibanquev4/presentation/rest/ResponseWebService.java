@@ -31,7 +31,7 @@ public class ResponseWebService {
 	 * Méthode permettant de récupérer l'objet response de type Response, créée lors de la réponse à un
 	 * sondage sur l'application Angular. 
 	 * 
-	 * @param resp
+	 * @param resp, objet de type Réponse créer dans le corps de la requête Http Post.
 	 */
 	@PostMapping
 	public Response create(@RequestBody Response resp) {

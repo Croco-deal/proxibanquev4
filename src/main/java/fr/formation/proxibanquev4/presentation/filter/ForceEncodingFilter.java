@@ -11,6 +11,11 @@ import javax.servlet.ServletResponse;
 
 import fr.formation.proxibanquev4.presentation.filter.ForceEncodingFilter;
 
+/**
+ * Classe implémentant l'interface Filter permettant de spécifier l'encodage des champs de saisie de texte des pages jsp. 
+ * @author JLSS
+ *
+ */
 public class ForceEncodingFilter implements Filter {
 	private static final String CHARSET = "UTF-8";
 

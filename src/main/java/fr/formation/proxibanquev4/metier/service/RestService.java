@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * Classe abstraite donnat une définition commune pour les services utilisés par
+ * Classe abstraite donnant une définition commune pour les services utilisés par
  * les services web REST.
  * 
  * @author JLSS
@@ -25,7 +25,7 @@ public abstract class RestService<ENTITY> {
 	 * Méthode permettant de créer une entité
 	 * 
 	 * @param entity
-	 * @return l'entity créée
+	 * @return ENTITY, l'entité créée
 	 */
 	public ENTITY create(final ENTITY entity) {
 		return this.getDao().save(entity);
@@ -44,7 +44,7 @@ public abstract class RestService<ENTITY> {
 	/**
 	 * Méthode permettant de récupérer toutes les entités
 	 * 
-	 * @return la liste des entities
+	 * @return la liste des objets de type Entity
 	 */
 
 	public List<ENTITY> readAll() {
@@ -54,8 +54,8 @@ public abstract class RestService<ENTITY> {
 	/**
 	 * Méthode permettant de mettre à jour une entité
 	 * 
-	 * @param l'entity qu'on veut mettre à jour
-	 * @return l'entity mise à jour
+	 * @param entity, l'entité qu'on veut mettre à jour
+	 * @return l'entité mise à jour
 	 */
 	public ENTITY update(final ENTITY entity) {
 		return this.getDao().save(entity);

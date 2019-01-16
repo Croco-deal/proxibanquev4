@@ -21,6 +21,7 @@ public class ResponseService extends RestService<Response> {
 
 	/**
 	 * Méthode permettant de retourner un objet reponseDao.
+	 * @return JpaRepository<Response, Integer>
 	 */
 	@Override
 	protected JpaRepository<Response, Integer> getDao() {
